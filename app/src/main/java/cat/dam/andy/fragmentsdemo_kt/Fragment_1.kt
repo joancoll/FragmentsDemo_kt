@@ -43,6 +43,7 @@ class Fragment_1 : Fragment() {
         val imageView = root.findViewById<ImageView>(R.id.img_tiger)
         imageView.setOnClickListener {
             val tigerDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.tiger)
+            // s'utilitza constantState per comparar els dos Drawable ja que el mètode equals no funciona
             if (imageView.drawable.constantState == tigerDrawable?.constantState) {
                 Toast.makeText(requireContext(), "Tiger to Lion", Toast.LENGTH_SHORT).show()
                 imageView.setImageResource(R.drawable.lion)
